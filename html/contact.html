@@ -15,8 +15,8 @@
   --surface:#F8F9FA;
   --ink:#16181C;
   --ink-2:#4A4F57;
-  --ink-3:#7C838D;
-  --accent:#9B2335;
+  --ink-3:#666D76;
+  --accent:#9B2335; --accent-text:#9B2335;
   --accent-soft:#9B233514;
   --rule:#D3D7DC;
 
@@ -30,8 +30,8 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#A9AEB6;
-    --ink-3:#767C85; --accent:#C8404F; --accent-soft:#C8404F1F; --rule:#2A2D33;
+    --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#B5BAC1;
+    --ink-3:#9BA0A6; --accent:#C8404F; --accent-text:#D4636F; --accent-soft:#C8404F1F; --rule:#2A2D33;
   }
 }
 :root[data-theme="dark"]{
@@ -89,7 +89,7 @@ a{color:inherit}
 .brand__name{font-family:var(--display); font-weight:800; font-size:1.06rem; letter-spacing:.01em}
 .top nav{display:flex; gap:clamp(14px,2.4vw,26px); font-size:.86rem; color:var(--ink-2)}
 .top nav a{text-decoration:none}
-.top nav a:hover{color:var(--accent)}
+.top nav a:hover{color:var(--accent-text)}
 @media(max-width:640px){.top nav a:nth-child(n+3){display:none}}
 
 /* ---------- hero ---------- */
@@ -98,7 +98,7 @@ a{color:inherit}
 @media(max-width:720px){.hero__grid{grid-template-columns:1fr; gap:28px}}
 .hero h1{font-size:clamp(2.1rem,5.4vw,var(--s6)); letter-spacing:-.01em}
 .hero h1 .en{display:block; font-family:var(--mono); font-weight:500;
-  font-size:clamp(.78rem,1.7vw,.95rem); letter-spacing:.28em; color:var(--accent);
+  font-size:clamp(.78rem,1.7vw,.95rem); letter-spacing:.28em; color:var(--accent-text);
   margin-bottom:18px; text-transform:uppercase}
 .hero__lead{margin-top:24px; font-size:var(--s3); color:var(--ink-2); line-height:1.95}
 .hero__cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
@@ -107,7 +107,7 @@ a{color:inherit}
   font-weight:500; border:1px solid var(--accent); color:#fff; background:var(--accent);
 }
 .btn:hover{filter:brightness(1.1)}
-.btn--ghost{background:transparent; color:var(--accent)}
+.btn--ghost{background:transparent; color:var(--accent-text)}
 .btn--ghost:hover{background:var(--accent-soft); filter:none}
 
 /* ---------- sections ---------- */
@@ -137,7 +137,7 @@ section{border-top:1px solid var(--rule)}
 }
 @media(max-width:720px){.piece{grid-template-columns:1fr}}
 .piece__tag{
-  font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; color:var(--accent);
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; color:var(--accent-text);
   border:1px solid var(--accent); padding:3px 9px; justify-self:start; text-transform:uppercase;
 }
 .piece h3{font-size:var(--s4); margin:14px 0 0}
@@ -147,7 +147,7 @@ section{border-top:1px solid var(--rule)}
   font-family:var(--mono); font-size:.74rem; color:var(--ink-3);
 }
 .spec span{border:1px solid var(--rule); padding:3px 9px}
-.piece a{color:var(--accent); text-underline-offset:4px; display:inline-block; margin-top:20px}
+.piece a{color:var(--accent-text); text-underline-offset:4px; display:inline-block; margin-top:20px}
 
 /* 受託の流れ — 実際に順序があるので番号を振る */
 .flow{display:grid; gap:0; counter-reset:step}
@@ -159,7 +159,7 @@ section{border-top:1px solid var(--rule)}
 .flow li:first-child{border-top:1px solid var(--rule)}
 .flow li::before{
   content:counter(step,decimal-leading-zero); font-family:var(--mono); font-size:.8rem;
-  color:var(--accent); padding-top:5px;
+  color:var(--accent-text); padding-top:5px;
 }
 .flow b{font-weight:700; font-family:var(--body)}
 .flow p{color:var(--ink-2); font-size:.94rem; margin-top:3px}
@@ -167,7 +167,7 @@ section{border-top:1px solid var(--rule)}
 /* 但し書き — カードにせず、左に細い罫だけ */
 .note{margin-top:36px; border-left:2px solid var(--accent); padding:2px 0 2px 20px}
 .note__k{font-family:var(--mono); font-size:.72rem; letter-spacing:.14em;
-  color:var(--accent); text-transform:uppercase; margin-bottom:8px}
+  color:var(--accent-text); text-transform:uppercase; margin-bottom:8px}
 .note__v{color:var(--ink-2); font-size:.94rem}
 
 /* 会社概要 */
@@ -179,7 +179,7 @@ section{border-top:1px solid var(--rule)}
 }
 .about dd{margin:0; padding:14px 0; border-bottom:1px solid var(--rule)}
 @media(max-width:640px){.about dt{padding-bottom:0} .about dd{padding-top:4px}}
-.fill{color:var(--accent); font-family:var(--mono); font-size:.85rem}
+.fill{color:var(--accent-text); font-family:var(--mono); font-size:.85rem}
 
 /* contact */
 .contact{display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:26px}
@@ -199,7 +199,7 @@ footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3)
 .ways__k small{display:block; font-family:var(--mono); font-size:.68rem;
   letter-spacing:.14em; color:var(--ink-3); margin-top:4px; text-transform:uppercase}
 .ways__v{color:var(--ink-2); font-size:.94rem}
-.ways__v a{color:var(--accent); text-underline-offset:4px}
+.ways__v a{color:var(--accent-text); text-underline-offset:4px}
 .ways--off .ways__k{color:var(--ink-3)}
 
 /* フォーム */
@@ -210,7 +210,7 @@ footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3)
 }
 .req{
   font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; padding:2px 6px;
-  border:1px solid var(--accent); color:var(--accent); text-transform:uppercase;
+  border:1px solid var(--accent); color:var(--accent-text); text-transform:uppercase;
 }
 .opt{
   font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; padding:2px 6px;
@@ -224,7 +224,7 @@ input[type=text], input[type=email], select, textarea{
 }
 textarea{min-height:170px; resize:vertical}
 input:focus-visible, select:focus-visible, textarea:focus-visible{
-  outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent);
+  outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent-text);
 }
 select{appearance:none; background-image:none}
 input[list]::-webkit-calendar-picker-indicator{opacity:.45; cursor:pointer}
@@ -233,8 +233,8 @@ input[list]::-webkit-calendar-picker-indicator{opacity:.45; cursor:pointer}
   display:flex; align-items:flex-start; gap:11px; font-size:.94rem;
   border:1px solid var(--rule); background:var(--surface); padding:12px 15px; cursor:pointer;
 }
-.choice label:hover{border-color:var(--accent)}
-.choice input{margin-top:.35rem; accent-color:var(--accent); flex:none}
+.choice label:hover{border-color:var(--accent-text)}
+.choice input{margin-top:.35rem; accent-color:var(--accent-text); flex:none}
 .choice span small{display:block; color:var(--ink-3); font-size:.82rem; margin-top:2px}
 .hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
 .submit{display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:4px}
@@ -440,7 +440,7 @@ button.btn{font-family:var(--body); cursor:pointer}
       平日の夜か土日に、数日以内でお返事します。
       日中は別の仕事をしているため、すぐの返信ができません。
       1週間たっても届かない場合は、迷惑メールに入っていないかご確認のうえ、
-      <a href="mailto:info@sanadatechlab.com" style="color:var(--accent)">info@sanadatechlab.com</a>
+      <a href="mailto:info@sanadatechlab.com" style="color:var(--accent-text)">info@sanadatechlab.com</a>
       へ直接ご連絡ください。
     </div>
   </div></section>
