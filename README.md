@@ -1,2 +1,2 @@
-# SandaTechLab
+# SanadaTechLab
 Sanada Tech Lab
