@@ -1,0 +1,441 @@
+<title>ご依頼とお問い合わせ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --bg:#EDEEF0;
+  --surface:#F8F9FA;
+  --ink:#16181C;
+  --ink-2:#4A4F57;
+  --ink-3:#7C838D;
+  --accent:#9B2335;
+  --accent-soft:#9B233514;
+  --rule:#D3D7DC;
+
+  --display:"Shippori Mincho B1",'Hiragino Mincho ProN','Yu Mincho',serif;
+  --body:"Zen Kaku Gothic New",'Hiragino Sans','Yu Gothic',sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,'SFMono-Regular',monospace;
+
+  --s1:.85rem; --s2:1rem; --s3:1.25rem; --s4:1.7rem;
+  --s5:2.4rem; --s6:3.4rem;
+  --wrap:1080px; --measure:64ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#A9AEB6;
+    --ink-3:#767C85; --accent:#C8404F; --accent-soft:#C8404F1F; --rule:#2A2D33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#A9AEB6;
+  --ink-3:#767C85; --accent:#C8404F; --accent-soft:#C8404F1F; --rule:#2A2D33;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap); margin-inline:auto; padding-inline:clamp(20px,5vw,48px)}
+.measure{max-width:var(--measure)}
+h1,h2,h3{margin:0; text-wrap:balance; font-family:var(--display); font-weight:800; line-height:1.3}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+.eyebrow{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+
+/* ---------- 六文銭 ---------- */
+.mon{display:block}
+.mon .coin{fill:none; stroke:var(--accent); stroke-width:5}
+.mon .hole{fill:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  .mon--hero g{animation:rise .55s cubic-bezier(.2,.7,.3,1) both}
+  .mon--hero g:nth-child(1){animation-delay:.02s}
+  .mon--hero g:nth-child(2){animation-delay:.08s}
+  .mon--hero g:nth-child(3){animation-delay:.14s}
+  .mon--hero g:nth-child(4){animation-delay:.20s}
+  .mon--hero g:nth-child(5){animation-delay:.26s}
+  .mon--hero g:nth-child(6){animation-delay:.32s}
+}
+@keyframes rise{from{opacity:.15; transform:translateY(6px)} to{opacity:1; transform:none}}
+
+/* ---------- header ---------- */
+.top{
+  position:sticky; top:0; z-index:10; background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--rule);
+}
+.top__in{display:flex; align-items:center; gap:14px; height:62px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:auto}
+.brand__name{font-family:var(--display); font-weight:800; font-size:1.06rem; letter-spacing:.01em}
+.top nav{display:flex; gap:clamp(14px,2.4vw,26px); font-size:.86rem; color:var(--ink-2)}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--accent)}
+@media(max-width:640px){.top nav a:nth-child(n+5){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,64px)}
+.hero__grid{display:grid; grid-template-columns:auto 1fr; gap:clamp(24px,5vw,56px); align-items:start}
+@media(max-width:720px){.hero__grid{grid-template-columns:1fr; gap:28px}}
+.hero h1{font-size:clamp(2.1rem,5.4vw,var(--s6)); letter-spacing:-.01em}
+.hero h1 .en{display:block; font-family:var(--mono); font-weight:500;
+  font-size:clamp(.78rem,1.7vw,.95rem); letter-spacing:.28em; color:var(--accent);
+  margin-bottom:18px; text-transform:uppercase}
+.hero__lead{margin-top:24px; font-size:var(--s3); color:var(--ink-2); line-height:1.95}
+.hero__cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+.btn{
+  display:inline-block; padding:12px 24px; text-decoration:none; font-size:.92rem;
+  font-weight:500; border:1px solid var(--accent); color:#fff; background:var(--accent);
+}
+.btn:hover{filter:brightness(1.1)}
+.btn--ghost{background:transparent; color:var(--accent)}
+.btn--ghost:hover{background:var(--accent-soft); filter:none}
+
+/* ---------- sections ---------- */
+section{border-top:1px solid var(--rule)}
+.sec{padding:clamp(48px,7vw,84px) 0}
+.sec__head{display:grid; gap:10px; margin-bottom:clamp(28px,4vw,44px)}
+.sec__head h2{font-size:clamp(1.5rem,3.4vw,var(--s5))}
+
+/* 事業内容 — カードにせず、罫で区切る */
+.work{display:grid; gap:0}
+.work__item{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);
+  gap:clamp(16px,4vw,44px); padding:26px 0; border-bottom:1px solid var(--rule);
+}
+.work__item:first-child{border-top:1px solid var(--rule)}
+@media(max-width:720px){.work__item{grid-template-columns:1fr; gap:8px}}
+.work__title{font-family:var(--display); font-weight:600; font-size:var(--s3)}
+.work__title span{display:block; font-family:var(--mono); font-size:.7rem;
+  letter-spacing:.14em; color:var(--ink-3); margin-top:6px; text-transform:uppercase}
+.work__body{color:var(--ink-2)}
+
+/* 制作物 */
+.piece{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:clamp(20px,4vw,40px);
+  padding:clamp(24px,3.5vw,34px); background:var(--surface);
+  border:1px solid var(--rule); align-items:start;
+}
+@media(max-width:720px){.piece{grid-template-columns:1fr}}
+.piece__tag{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; color:var(--accent);
+  border:1px solid var(--accent); padding:3px 9px; justify-self:start; text-transform:uppercase;
+}
+.piece h3{font-size:var(--s4); margin:14px 0 0}
+.piece p{color:var(--ink-2); margin-top:12px}
+.spec{
+  margin-top:20px; display:flex; flex-wrap:wrap; gap:8px;
+  font-family:var(--mono); font-size:.74rem; color:var(--ink-3);
+}
+.spec span{border:1px solid var(--rule); padding:3px 9px}
+.piece a{color:var(--accent); text-underline-offset:4px; display:inline-block; margin-top:20px}
+
+/* 受託の流れ — 実際に順序があるので番号を振る */
+.flow{display:grid; gap:0; counter-reset:step}
+.flow li{
+  list-style:none; counter-increment:step; display:grid;
+  grid-template-columns:auto minmax(0,1fr); gap:20px;
+  padding:20px 0; border-bottom:1px solid var(--rule);
+}
+.flow li:first-child{border-top:1px solid var(--rule)}
+.flow li::before{
+  content:counter(step,decimal-leading-zero); font-family:var(--mono); font-size:.8rem;
+  color:var(--accent); padding-top:5px;
+}
+.flow b{font-weight:700; font-family:var(--body)}
+.flow p{color:var(--ink-2); font-size:.94rem; margin-top:3px}
+
+/* 但し書き — カードにせず、左に細い罫だけ */
+.note{margin-top:36px; border-left:2px solid var(--accent); padding:2px 0 2px 20px}
+.note__k{font-family:var(--mono); font-size:.72rem; letter-spacing:.14em;
+  color:var(--accent); text-transform:uppercase; margin-bottom:8px}
+.note__v{color:var(--ink-2); font-size:.94rem}
+
+/* 会社概要 */
+.about{display:grid; grid-template-columns:auto minmax(0,1fr); gap:0 clamp(20px,4vw,44px)}
+@media(max-width:640px){.about{grid-template-columns:1fr; gap:0}}
+.about dt{
+  font-family:var(--mono); font-size:.74rem; letter-spacing:.1em; color:var(--ink-3);
+  padding:14px 0 0; text-transform:uppercase;
+}
+.about dd{margin:0; padding:14px 0; border-bottom:1px solid var(--rule)}
+@media(max-width:640px){.about dt{padding-bottom:0} .about dd{padding-top:4px}}
+.fill{color:var(--accent); font-family:var(--mono); font-size:.85rem}
+
+/* contact */
+.contact{display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:26px}
+
+footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3); font-size:.82rem}
+.foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+</style>
+<style>
+/* 連絡手段 — 罫で区切る。カードにしない */
+.ways{border-top:1px solid var(--rule); margin-top:8px}
+.ways__row{
+  display:grid; grid-template-columns:10rem 1fr; gap:clamp(14px,3vw,36px);
+  padding:22px 0; border-bottom:1px solid var(--rule); align-items:baseline;
+}
+@media(max-width:640px){.ways__row{grid-template-columns:1fr; gap:6px}}
+.ways__k{font-family:var(--display); font-weight:600; font-size:var(--s2)}
+.ways__k small{display:block; font-family:var(--mono); font-size:.68rem;
+  letter-spacing:.14em; color:var(--ink-3); margin-top:4px; text-transform:uppercase}
+.ways__v{color:var(--ink-2); font-size:.94rem}
+.ways__v a{color:var(--accent); text-underline-offset:4px}
+.ways--off .ways__k{color:var(--ink-3)}
+
+/* フォーム */
+.form{display:grid; gap:26px; max-width:640px; margin-top:8px}
+.field{display:grid; gap:8px}
+.field > label, .field > .lg{
+  font-size:.9rem; font-weight:500; display:flex; align-items:center; gap:9px;
+}
+.req{
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; padding:2px 6px;
+  border:1px solid var(--accent); color:var(--accent); text-transform:uppercase;
+}
+.opt{
+  font-family:var(--mono); font-size:.62rem; letter-spacing:.1em; padding:2px 6px;
+  border:1px solid var(--rule); color:var(--ink-3); text-transform:uppercase;
+}
+.hint{font-size:.82rem; color:var(--ink-3); line-height:1.7}
+input[type=text], input[type=email], select, textarea{
+  font-family:var(--body); font-size:1rem; color:var(--ink);
+  background:var(--surface); border:1px solid var(--rule); border-radius:0;
+  padding:11px 13px; width:100%; line-height:1.6;
+}
+textarea{min-height:170px; resize:vertical}
+input:focus-visible, select:focus-visible, textarea:focus-visible{
+  outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent);
+}
+select{appearance:none; background-image:none}
+input[list]::-webkit-calendar-picker-indicator{opacity:.45; cursor:pointer}
+.choice{display:grid; gap:9px}
+.choice label{
+  display:flex; align-items:flex-start; gap:11px; font-size:.94rem;
+  border:1px solid var(--rule); background:var(--surface); padding:12px 15px; cursor:pointer;
+}
+.choice label:hover{border-color:var(--accent)}
+.choice input{margin-top:.35rem; accent-color:var(--accent); flex:none}
+.choice span small{display:block; color:var(--ink-3); font-size:.82rem; margin-top:2px}
+.hp{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden}
+.submit{display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:4px}
+button.btn{font-family:var(--body); cursor:pointer}
+.after{
+  border-left:2px solid var(--accent); padding:2px 0 2px 20px; margin-top:40px;
+  color:var(--ink-2); font-size:.94rem;
+}
+.after b{font-family:var(--display); display:block; margin-bottom:6px; color:var(--ink)}
+</style>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mon" viewBox="0 0 168 116">
+      <g><circle class="coin" cx="26" cy="26" r="22"/><rect class="hole" x="20" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="84" cy="26" r="22"/><rect class="hole" x="78" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="142" cy="26" r="22"/><rect class="hole" x="136" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="26" cy="90" r="22"/><rect class="hole" x="20" y="84" width="12" height="12"/></g>
+      <g><circle class="coin" cx="84" cy="90" r="22"/><rect class="hole" x="78" y="84" width="12" height="12"/></g>
+      <g><circle class="coin" cx="142" cy="90" r="22"/><rect class="hole" x="136" y="84" width="12" height="12"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="index.html">
+      <svg class="mon" width="30" height="21" aria-hidden="true"><use href="#mon"/></svg>
+      <span class="brand__name">Sanada Tech Lab</span>
+    </a>
+    <nav>
+      <a href="index.html#work">事業内容</a>
+      <a href="index.html#made">制作物</a>
+      <a href="about.html">経歴</a>
+      <a href="index.html#order">ご依頼</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <div class="hero__grid">
+      <svg class="mon mon--hero" width="132" height="91" role="img" aria-label="六文銭">
+        <use href="#mon"/>
+      </svg>
+      <div>
+        <h1><span class="en">Contact</span>まず、お話を<br>聞かせてください。</h1>
+        <p class="hero__lead measure">
+          作るものが決まっていなくて構いません。
+          「こういうことに困っている」だけで十分です。
+          お見積もりまで無料で、合わなければ断っていただけます。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 連絡手段 ===== -->
+  <section id="ways"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">Channels</p>
+      <h2>連絡の手段。</h2>
+    </div>
+    <div class="ways">
+      <div class="ways__row">
+        <div class="ways__k">フォーム<small>Form</small></div>
+        <div class="ways__v">
+          このページの下にあります。何を書けばよいか迷わないよう、項目を用意しました。
+        </div>
+      </div>
+      <div class="ways__row">
+        <div class="ways__k">メール<small>Email</small></div>
+        <div class="ways__v">
+          <a href="mailto:info@sanadatechlab.com">info@sanadatechlab.com</a><br>
+          添付ファイルがある場合や、書きたいことが決まっている場合はこちらが早いです。
+        </div>
+      </div>
+      <div class="ways__row ways--off">
+        <div class="ways__k">お電話<small>Phone</small></div>
+        <div class="ways__v">
+          恐れ入りますが、電話でのご相談は承っておりません。
+          日中は別の仕事をしているため出られず、折り返しも遅くなります。
+          文字で残るほうが、聞き違いも起きません。
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ===== フォーム ===== -->
+  <section id="form"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">Form</p>
+      <h2>ご依頼・お問い合わせ。</h2>
+    </div>
+
+    <form class="form" action="__FORM_ACTION__" method="POST">
+
+      <div class="field">
+        <span class="lg">ご用件 <span class="req">必須</span></span>
+        <div class="choice">
+          <label>
+            <input type="radio" name="ご用件" value="開発のご依頼" required>
+            <span>開発のご依頼
+              <small>アプリ・ツール・Web サイトを作ってほしい</small></span>
+          </label>
+          <label>
+            <input type="radio" name="ご用件" value="お問い合わせ">
+            <span>お問い合わせ・ご質問
+              <small>できるかどうか知りたい、相談だけしたい</small></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="name">お名前 <span class="req">必須</span></label>
+        <input id="name" name="お名前" type="text" required autocomplete="name">
+      </div>
+
+      <div class="field">
+        <label for="org">会社名・お店の名前 <span class="opt">任意</span></label>
+        <input id="org" name="会社名" type="text" autocomplete="organization">
+      </div>
+
+      <div class="field">
+        <label for="mail">メールアドレス <span class="req">必須</span></label>
+        <input id="mail" name="メールアドレス" type="email" required autocomplete="email">
+        <p class="hint">お返事はこちらに差し上げます。お間違いのないようご確認ください。</p>
+      </div>
+
+      <div class="field">
+        <label for="kind">作りたいもの <span class="opt">任意</span></label>
+        <input id="kind" name="作りたいもの" type="text" list="kind-list"
+               placeholder="選ぶか、直接ご記入ください">
+        <datalist id="kind-list">
+          <option value="まだ決まっていない"></option>
+          <option value="Android アプリ"></option>
+          <option value="パソコン用ツール（Excel のマクロなど）"></option>
+          <option value="Web サイト"></option>
+        </datalist>
+        <p class="hint">
+          「予約をスマホで管理したい」のように、やりたいことでご記入いただいても結構です。
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="budget">ご予算の目安 <span class="opt">任意</span></label>
+        <input id="budget" name="ご予算" type="text" list="budget-list"
+               placeholder="選ぶか、直接ご記入ください">
+        <datalist id="budget-list">
+          <option value="分からない・これから決める"></option>
+          <option value="5万円くらいまで"></option>
+          <option value="10万円くらいまで"></option>
+          <option value="10万円〜30万円くらい"></option>
+          <option value="30万円以上"></option>
+        </datalist>
+        <p class="hint">
+          決まっていなくて構いません。分かると、ご提案の幅を早く絞れます。
+          欄をクリックすると目安が出ますが、そのまま書いていただいても結構です。
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="when">ご希望の時期 <span class="opt">任意</span></label>
+        <input id="when" name="希望時期" type="text" list="when-list"
+               placeholder="選ぶか、直接ご記入ください">
+        <datalist id="when-list">
+          <option value="急ぎません"></option>
+          <option value="3ヶ月以内"></option>
+          <option value="1ヶ月以内"></option>
+          <option value="時期は未定"></option>
+        </datalist>
+        <p class="hint">
+          「4月の開店に間に合わせたい」のように、日付や事情でご記入いただいても結構です。
+        </p>
+      </div>
+
+      <div class="field">
+        <label for="body">ご相談の内容 <span class="req">必須</span></label>
+        <textarea id="body" name="ご相談の内容" required
+          placeholder="例）小さな飲食店をやっています。予約をノートで管理していて書き間違いが多いので、スマホで見られる形にしたいです。&#10;&#10;例）Excel で毎月の集計に半日かかっています。手順は決まっているので、自動にできませんか。"></textarea>
+        <p class="hint">
+          うまくまとまっていなくて構いません。困っていることが分かれば、こちらから伺います。
+        </p>
+      </div>
+
+      <!-- 迷惑投稿よけ。人には見えない -->
+      <div class="hp" aria-hidden="true">
+        <label>この欄は書かないでください
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+        </label>
+      </div>
+
+      <div class="submit">
+        <button class="btn" type="submit">送信する</button>
+        <span class="hint">送信内容は、ご相談のためだけに使います。</span>
+      </div>
+    </form>
+
+    <div class="after measure">
+      <b>送信のあと</b>
+      平日の夜か土日に、数日以内でお返事します。
+      日中は別の仕事をしているため、すぐの返信ができません。
+      1週間たっても届かない場合は、迷惑メールに入っていないかご確認のうえ、
+      <a href="mailto:info@sanadatechlab.com" style="color:var(--accent)">info@sanadatechlab.com</a>
+      へ直接ご連絡ください。
+    </div>
+  </div></section>
+
+</main>
+
+<footer><div class="wrap foot">
+  <svg class="mon" width="26" height="18" aria-hidden="true"><use href="#mon"/></svg>
+  <span>Sanada Tech Lab</span>
+  <span style="margin-left:auto">屋号は真田の家紋「六文銭」に由来します。</span>
+</div></footer>

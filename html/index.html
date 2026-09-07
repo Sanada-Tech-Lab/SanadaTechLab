@@ -1,0 +1,358 @@
+<title>Sanada Tech Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --bg:#EDEEF0;
+  --surface:#F8F9FA;
+  --ink:#16181C;
+  --ink-2:#4A4F57;
+  --ink-3:#7C838D;
+  --accent:#9B2335;
+  --accent-soft:#9B233514;
+  --rule:#D3D7DC;
+
+  --display:"Shippori Mincho B1",'Hiragino Mincho ProN','Yu Mincho',serif;
+  --body:"Zen Kaku Gothic New",'Hiragino Sans','Yu Gothic',sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,'SFMono-Regular',monospace;
+
+  --s1:.85rem; --s2:1rem; --s3:1.25rem; --s4:1.7rem;
+  --s5:2.4rem; --s6:3.4rem;
+  --wrap:1080px; --measure:64ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#A9AEB6;
+    --ink-3:#767C85; --accent:#C8404F; --accent-soft:#C8404F1F; --rule:#2A2D33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#A9AEB6;
+  --ink-3:#767C85; --accent:#C8404F; --accent-soft:#C8404F1F; --rule:#2A2D33;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap); margin-inline:auto; padding-inline:clamp(20px,5vw,48px)}
+.measure{max-width:var(--measure)}
+h1,h2,h3{margin:0; text-wrap:balance; font-family:var(--display); font-weight:800; line-height:1.3}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+.eyebrow{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+
+/* ---------- 六文銭 ---------- */
+.mon{display:block}
+.mon .coin{fill:none; stroke:var(--accent); stroke-width:5}
+.mon .hole{fill:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  .mon--hero g{animation:rise .55s cubic-bezier(.2,.7,.3,1) both}
+  .mon--hero g:nth-child(1){animation-delay:.02s}
+  .mon--hero g:nth-child(2){animation-delay:.08s}
+  .mon--hero g:nth-child(3){animation-delay:.14s}
+  .mon--hero g:nth-child(4){animation-delay:.20s}
+  .mon--hero g:nth-child(5){animation-delay:.26s}
+  .mon--hero g:nth-child(6){animation-delay:.32s}
+}
+@keyframes rise{from{opacity:.15; transform:translateY(6px)} to{opacity:1; transform:none}}
+
+/* ---------- header ---------- */
+.top{
+  position:sticky; top:0; z-index:10; background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--rule);
+}
+.top__in{display:flex; align-items:center; gap:14px; height:62px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:auto}
+.brand__name{font-family:var(--display); font-weight:800; font-size:1.06rem; letter-spacing:.01em}
+.top nav{display:flex; gap:clamp(14px,2.4vw,26px); font-size:.86rem; color:var(--ink-2)}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--accent)}
+@media(max-width:640px){.top nav a:nth-child(n+5){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,64px)}
+.hero__grid{display:grid; grid-template-columns:auto 1fr; gap:clamp(24px,5vw,56px); align-items:start}
+@media(max-width:720px){.hero__grid{grid-template-columns:1fr; gap:28px}}
+.hero h1{font-size:clamp(2.1rem,5.4vw,var(--s6)); letter-spacing:-.01em}
+.hero h1 .en{display:block; font-family:var(--mono); font-weight:500;
+  font-size:clamp(.78rem,1.7vw,.95rem); letter-spacing:.28em; color:var(--accent);
+  margin-bottom:18px; text-transform:uppercase}
+.hero__lead{margin-top:24px; font-size:var(--s3); color:var(--ink-2); line-height:1.95}
+.hero__cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+.btn{
+  display:inline-block; padding:12px 24px; text-decoration:none; font-size:.92rem;
+  font-weight:500; border:1px solid var(--accent); color:#fff; background:var(--accent);
+}
+.btn:hover{filter:brightness(1.1)}
+.btn--ghost{background:transparent; color:var(--accent)}
+.btn--ghost:hover{background:var(--accent-soft); filter:none}
+
+/* ---------- sections ---------- */
+section{border-top:1px solid var(--rule)}
+.sec{padding:clamp(48px,7vw,84px) 0}
+.sec__head{display:grid; gap:10px; margin-bottom:clamp(28px,4vw,44px)}
+.sec__head h2{font-size:clamp(1.5rem,3.4vw,var(--s5))}
+
+/* 事業内容 — カードにせず、罫で区切る */
+.work{display:grid; gap:0}
+.work__item{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);
+  gap:clamp(16px,4vw,44px); padding:26px 0; border-bottom:1px solid var(--rule);
+}
+.work__item:first-child{border-top:1px solid var(--rule)}
+@media(max-width:720px){.work__item{grid-template-columns:1fr; gap:8px}}
+.work__title{font-family:var(--display); font-weight:600; font-size:var(--s3)}
+.work__title span{display:block; font-family:var(--mono); font-size:.7rem;
+  letter-spacing:.14em; color:var(--ink-3); margin-top:6px; text-transform:uppercase}
+.work__body{color:var(--ink-2)}
+
+/* 制作物 */
+.piece{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:clamp(20px,4vw,40px);
+  padding:clamp(24px,3.5vw,34px); background:var(--surface);
+  border:1px solid var(--rule); align-items:start;
+}
+@media(max-width:720px){.piece{grid-template-columns:1fr}}
+.piece__tag{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; color:var(--accent);
+  border:1px solid var(--accent); padding:3px 9px; justify-self:start; text-transform:uppercase;
+}
+.piece h3{font-size:var(--s4); margin:14px 0 0}
+.piece p{color:var(--ink-2); margin-top:12px}
+.spec{
+  margin-top:20px; display:flex; flex-wrap:wrap; gap:8px;
+  font-family:var(--mono); font-size:.74rem; color:var(--ink-3);
+}
+.spec span{border:1px solid var(--rule); padding:3px 9px}
+.piece a{color:var(--accent); text-underline-offset:4px; display:inline-block; margin-top:20px}
+
+/* 受託の流れ — 実際に順序があるので番号を振る */
+.flow{display:grid; gap:0; counter-reset:step}
+.flow li{
+  list-style:none; counter-increment:step; display:grid;
+  grid-template-columns:auto minmax(0,1fr); gap:20px;
+  padding:20px 0; border-bottom:1px solid var(--rule);
+}
+.flow li:first-child{border-top:1px solid var(--rule)}
+.flow li::before{
+  content:counter(step,decimal-leading-zero); font-family:var(--mono); font-size:.8rem;
+  color:var(--accent); padding-top:5px;
+}
+.flow b{font-weight:700; font-family:var(--body)}
+.flow p{color:var(--ink-2); font-size:.94rem; margin-top:3px}
+
+/* 但し書き — カードにせず、左に細い罫だけ */
+.note{margin-top:36px; border-left:2px solid var(--accent); padding:2px 0 2px 20px}
+.note__k{font-family:var(--mono); font-size:.72rem; letter-spacing:.14em;
+  color:var(--accent); text-transform:uppercase; margin-bottom:8px}
+.note__v{color:var(--ink-2); font-size:.94rem}
+
+/* 会社概要 */
+.about{display:grid; grid-template-columns:auto minmax(0,1fr); gap:0 clamp(20px,4vw,44px)}
+@media(max-width:640px){.about{grid-template-columns:1fr; gap:0}}
+.about dt{
+  font-family:var(--mono); font-size:.74rem; letter-spacing:.1em; color:var(--ink-3);
+  padding:14px 0 0; text-transform:uppercase;
+}
+.about dd{margin:0; padding:14px 0; border-bottom:1px solid var(--rule)}
+@media(max-width:640px){.about dt{padding-bottom:0} .about dd{padding-top:4px}}
+.fill{color:var(--accent); font-family:var(--mono); font-size:.85rem}
+
+/* contact */
+.contact{display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:26px}
+
+footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3); font-size:.82rem}
+.foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mon" viewBox="0 0 168 116">
+      <g><circle class="coin" cx="26" cy="26" r="22"/><rect class="hole" x="20" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="84" cy="26" r="22"/><rect class="hole" x="78" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="142" cy="26" r="22"/><rect class="hole" x="136" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="26" cy="90" r="22"/><rect class="hole" x="20" y="84" width="12" height="12"/></g>
+      <g><circle class="coin" cx="84" cy="90" r="22"/><rect class="hole" x="78" y="84" width="12" height="12"/></g>
+      <g><circle class="coin" cx="142" cy="90" r="22"/><rect class="hole" x="136" y="84" width="12" height="12"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#top">
+      <svg class="mon" width="30" height="21" aria-hidden="true"><use href="#mon"/></svg>
+      <span class="brand__name">Sanada Tech Lab</span>
+    </a>
+    <nav>
+      <a href="#work">事業内容</a>
+      <a href="#made">制作物</a>
+      <a href="about.html">経歴</a>
+      <a href="#order">ご依頼</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <div class="hero__grid">
+      <svg class="mon mon--hero" width="132" height="91" role="img" aria-label="六文銭">
+        <use href="#mon"/>
+      </svg>
+      <div>
+        <h1><span class="en">Sanada Tech Lab</span>作ったものを、<br>使う人のところまで。</h1>
+        <p class="hero__lead measure">
+          長野県上田市の個人事業として、Android アプリ、パソコン用ツール、
+          Web サイトを作っています。設計書からテストまで一人で通すので、
+          「なぜそうしたか」を全部お答えできます。
+        </p>
+        <div class="hero__cta">
+          <a class="btn" href="contact.html">開発のご相談</a>
+          <a class="btn btn--ghost" href="#made">作ったものを見る</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 事業内容 ===== -->
+  <section id="work"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">事業内容</p>
+      <h2>作るものと、作り方。</h2>
+    </div>
+
+    <div class="work">
+      <div class="work__item">
+        <div class="work__title">Android アプリ<span>Android / .NET MAUI</span></div>
+        <p class="work__body">
+          企画から公開・運用まで。Google Play への申請、プライバシーポリシー、
+          データセーフティの申告といった、作ったあとに必要になる手続きも含めて引き受けます。
+        </p>
+      </div>
+      <div class="work__item">
+        <div class="work__title">パソコン用ツール<span>Windows / Excel</span></div>
+        <p class="work__body">
+          Excel のマクロ、日々の集計や帳票づくりを楽にする小さなソフト。
+          今お使いの手順のまま置き換えることを優先します。
+          新しい操作を覚え直さずに済む形にします。
+        </p>
+      </div>
+      <div class="work__item">
+        <div class="work__title">Web サイト制作<span>Static / Responsive</span></div>
+        <p class="work__body">
+          小規模な事業者向けのサイトを、静的サイトとして軽く作ります。
+          更新のたびに費用がかからない形にすることを優先しています。
+        </p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ===== 制作物 ===== -->
+  <section id="made"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">制作物</p>
+      <h2>作ったもの。</h2>
+    </div>
+
+    <div class="piece">
+      <div>
+        <span class="piece__tag">公開準備中</span>
+      </div>
+      <div>
+        <h3>血圧手帳、そのまま｜血圧記録</h3>
+        <p>
+          家庭で測った血圧を記録する Android アプリです。
+          紙の血圧手帳と同じ並びの一覧を画面に出せるので、
+          診察のときは印刷せず、その画面をそのまま医師に見せられます。
+        </p>
+        <p>
+          測らなかった日は空欄のままにします。0 を入れて平均を狂わせません。
+          判定は日本高血圧学会の家庭血圧の分類に従い、独自の基準は作っていません。
+        </p>
+        <div class="spec">
+          <span>C# / .NET MAUI</span><span>Android 12–16</span>
+          <span>SQLite</span><span>単体テスト 384</span><span>記録は端末内のみ</span>
+        </div>
+        <a href="https://miyama-job17.github.io/BloodPressureManagementAndroid/" target="_blank" rel="noopener">
+          紹介ページを見る →
+        </a>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ===== ご依頼 ===== -->
+  <section id="order"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">ご依頼</p>
+      <h2>お見積もりまでの流れ。</h2>
+    </div>
+    <p class="measure" style="color:var(--ink-2); margin-bottom:32px">
+      アプリ・Web サイトの制作を承ります。
+      作るものが決まっていない段階のご相談でも構いません。
+      お見積もりまでは無料です。
+    </p>
+
+    <ol class="flow">
+      <li><div><b>ご相談</b><p>作りたいものと、困っていることをお聞かせください。形が決まっていなくても構いません。</p></div></li>
+      <li><div><b>要件の整理</b><p>必要な機能と、今回は作らないものを一緒に切り分けます。ここで費用の幅が決まります。</p></div></li>
+      <li><div><b>お見積もり</b><p>費用と期間をお出しします。ここまで無料です。合わなければ断っていただいて構いません。</p></div></li>
+      <li><div><b>開発</b><p>途中の状態をお見せしながら進めます。仕様の変更は、影響を説明したうえで反映します。</p></div></li>
+      <li><div><b>納品・その後</b><p>納品後の不具合対応の範囲と期間を、契約時に明記します。あとから揉めないためです。</p></div></li>
+    </ol>
+
+    <div class="note">
+      <p class="note__k">お引き受けできる範囲</p>
+      <p class="note__v measure">
+        平日の日中は別の仕事をしているため、作業は平日の夜と土日になります。
+        設計から実装まで一人で作っていますので、
+        大人数・短納期の案件はお引き受けできません。
+        小さく作って、長く使えるものが得意です。
+        お返事は数日以内、お見積もりは1週間ほどをいただいています。
+      </p>
+    </div>
+  </div></section>
+
+  <!-- ===== 概要 ===== -->
+  <section id="about"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">事業概要</p>
+      <h2>Sanada Tech Lab</h2>
+    </div>
+
+    <dl class="about">
+      <dt>屋号</dt><dd>Sanada Tech Lab</dd>
+      <dt>事業形態</dt><dd>個人事業</dd>
+      <dt>代表者</dt><dd>深山　国哉</dd>
+      <dt>所在地</dt><dd>長野県上田市</dd>
+      <dt>事業内容</dt><dd>Android アプリ・パソコン用ツール・Web システムの企画、開発、運営及び販売／Web サイト制作</dd>
+      <dt>設立</dt><dd>2026年</dd>
+      <dt>連絡先</dt><dd>info@sanadatechlab.com</dd>
+    </dl>
+
+    <div class="contact">
+      <a class="btn" href="contact.html">お問い合わせ</a>
+      <span style="color:var(--ink-3); font-size:.88rem">
+        お見積もりまで無料です。平日の夜か土日に、数日以内でお返事します。
+      </span>
+    </div>
+  </div></section>
+
+</main>
+
+<footer><div class="wrap foot">
+  <svg class="mon" width="26" height="18" aria-hidden="true"><use href="#mon"/></svg>
+  <span>Sanada Tech Lab</span>
+  <span style="margin-left:auto">屋号は真田の家紋「六文銭」に由来します。</span>
+</div></footer>

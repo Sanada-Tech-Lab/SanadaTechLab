@@ -1,0 +1,375 @@
+<title>深山国哉の経歴</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;800&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --bg:#EDEEF0;
+  --surface:#F8F9FA;
+  --ink:#16181C;
+  --ink-2:#4A4F57;
+  --ink-3:#7C838D;
+  --accent:#9B2335;
+  --accent-soft:#9B233514;
+  --rule:#D3D7DC;
+
+  --display:"Shippori Mincho B1",'Hiragino Mincho ProN','Yu Mincho',serif;
+  --body:"Zen Kaku Gothic New",'Hiragino Sans','Yu Gothic',sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,'SFMono-Regular',monospace;
+
+  --s1:.85rem; --s2:1rem; --s3:1.25rem; --s4:1.7rem;
+  --s5:2.4rem; --s6:3.4rem;
+  --wrap:1080px; --measure:64ch;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#A9AEB6;
+    --ink-3:#767C85; --accent:#C8404F; --accent-soft:#C8404F1F; --rule:#2A2D33;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121316; --surface:#1A1C21; --ink:#E9EAEC; --ink-2:#A9AEB6;
+  --ink-3:#767C85; --accent:#C8404F; --accent-soft:#C8404F1F; --rule:#2A2D33;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--body); font-size:16px; line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--wrap); margin-inline:auto; padding-inline:clamp(20px,5vw,48px)}
+.measure{max-width:var(--measure)}
+h1,h2,h3{margin:0; text-wrap:balance; font-family:var(--display); font-weight:800; line-height:1.3}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+.eyebrow{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.16em;
+  text-transform:uppercase; color:var(--ink-3);
+}
+
+/* ---------- 六文銭 ---------- */
+.mon{display:block}
+.mon .coin{fill:none; stroke:var(--accent); stroke-width:5}
+.mon .hole{fill:var(--accent)}
+@media (prefers-reduced-motion:no-preference){
+  .mon--hero g{animation:rise .55s cubic-bezier(.2,.7,.3,1) both}
+  .mon--hero g:nth-child(1){animation-delay:.02s}
+  .mon--hero g:nth-child(2){animation-delay:.08s}
+  .mon--hero g:nth-child(3){animation-delay:.14s}
+  .mon--hero g:nth-child(4){animation-delay:.20s}
+  .mon--hero g:nth-child(5){animation-delay:.26s}
+  .mon--hero g:nth-child(6){animation-delay:.32s}
+}
+@keyframes rise{from{opacity:.15; transform:translateY(6px)} to{opacity:1; transform:none}}
+
+/* ---------- header ---------- */
+.top{
+  position:sticky; top:0; z-index:10; background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(8px); border-bottom:1px solid var(--rule);
+}
+.top__in{display:flex; align-items:center; gap:14px; height:62px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none; margin-right:auto}
+.brand__name{font-family:var(--display); font-weight:800; font-size:1.06rem; letter-spacing:.01em}
+.top nav{display:flex; gap:clamp(14px,2.4vw,26px); font-size:.86rem; color:var(--ink-2)}
+.top nav a{text-decoration:none}
+.top nav a:hover{color:var(--accent)}
+@media(max-width:640px){.top nav a:nth-child(n+4){display:none}}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(56px,9vw,104px) 0 clamp(40px,6vw,64px)}
+.hero__grid{display:grid; grid-template-columns:auto 1fr; gap:clamp(24px,5vw,56px); align-items:start}
+@media(max-width:720px){.hero__grid{grid-template-columns:1fr; gap:28px}}
+.hero h1{font-size:clamp(2.1rem,5.4vw,var(--s6)); letter-spacing:-.01em}
+.hero h1 .en{display:block; font-family:var(--mono); font-weight:500;
+  font-size:clamp(.78rem,1.7vw,.95rem); letter-spacing:.28em; color:var(--accent);
+  margin-bottom:18px; text-transform:uppercase}
+.hero__lead{margin-top:24px; font-size:var(--s3); color:var(--ink-2); line-height:1.95}
+.hero__cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px}
+.btn{
+  display:inline-block; padding:12px 24px; text-decoration:none; font-size:.92rem;
+  font-weight:500; border:1px solid var(--accent); color:#fff; background:var(--accent);
+}
+.btn:hover{filter:brightness(1.1)}
+.btn--ghost{background:transparent; color:var(--accent)}
+.btn--ghost:hover{background:var(--accent-soft); filter:none}
+
+/* ---------- sections ---------- */
+section{border-top:1px solid var(--rule)}
+.sec{padding:clamp(48px,7vw,84px) 0}
+.sec__head{display:grid; gap:10px; margin-bottom:clamp(28px,4vw,44px)}
+.sec__head h2{font-size:clamp(1.5rem,3.4vw,var(--s5))}
+
+/* 事業内容 — カードにせず、罫で区切る */
+.work{display:grid; gap:0}
+.work__item{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);
+  gap:clamp(16px,4vw,44px); padding:26px 0; border-bottom:1px solid var(--rule);
+}
+.work__item:first-child{border-top:1px solid var(--rule)}
+@media(max-width:720px){.work__item{grid-template-columns:1fr; gap:8px}}
+.work__title{font-family:var(--display); font-weight:600; font-size:var(--s3)}
+.work__title span{display:block; font-family:var(--mono); font-size:.7rem;
+  letter-spacing:.14em; color:var(--ink-3); margin-top:6px; text-transform:uppercase}
+.work__body{color:var(--ink-2)}
+
+/* 制作物 */
+.piece{
+  display:grid; grid-template-columns:auto minmax(0,1fr); gap:clamp(20px,4vw,40px);
+  padding:clamp(24px,3.5vw,34px); background:var(--surface);
+  border:1px solid var(--rule); align-items:start;
+}
+@media(max-width:720px){.piece{grid-template-columns:1fr}}
+.piece__tag{
+  font-family:var(--mono); font-size:.7rem; letter-spacing:.14em; color:var(--accent);
+  border:1px solid var(--accent); padding:3px 9px; justify-self:start; text-transform:uppercase;
+}
+.piece h3{font-size:var(--s4); margin:14px 0 0}
+.piece p{color:var(--ink-2); margin-top:12px}
+.spec{
+  margin-top:20px; display:flex; flex-wrap:wrap; gap:8px;
+  font-family:var(--mono); font-size:.74rem; color:var(--ink-3);
+}
+.spec span{border:1px solid var(--rule); padding:3px 9px}
+.piece a{color:var(--accent); text-underline-offset:4px; display:inline-block; margin-top:20px}
+
+/* 受託の流れ — 実際に順序があるので番号を振る */
+.flow{display:grid; gap:0; counter-reset:step}
+.flow li{
+  list-style:none; counter-increment:step; display:grid;
+  grid-template-columns:auto minmax(0,1fr); gap:20px;
+  padding:20px 0; border-bottom:1px solid var(--rule);
+}
+.flow li:first-child{border-top:1px solid var(--rule)}
+.flow li::before{
+  content:counter(step,decimal-leading-zero); font-family:var(--mono); font-size:.8rem;
+  color:var(--accent); padding-top:5px;
+}
+.flow b{font-weight:700; font-family:var(--body)}
+.flow p{color:var(--ink-2); font-size:.94rem; margin-top:3px}
+
+/* 会社概要 */
+.about{display:grid; grid-template-columns:auto minmax(0,1fr); gap:0 clamp(20px,4vw,44px)}
+@media(max-width:640px){.about{grid-template-columns:1fr; gap:0}}
+.about dt{
+  font-family:var(--mono); font-size:.74rem; letter-spacing:.1em; color:var(--ink-3);
+  padding:14px 0 0; text-transform:uppercase;
+}
+.about dd{margin:0; padding:14px 0; border-bottom:1px solid var(--rule)}
+@media(max-width:640px){.about dt{padding-bottom:0} .about dd{padding-top:4px}}
+.fill{color:var(--accent); font-family:var(--mono); font-size:.85rem}
+
+/* contact */
+.contact{display:flex; flex-wrap:wrap; align-items:center; gap:16px; margin-top:26px}
+
+footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3); font-size:.82rem}
+.foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+</style>
+<style>
+/* 使ってきたもの：見出しと中身の対 */
+.stack{border-top:1px solid var(--rule)}
+.stack__row{
+  display:grid; grid-template-columns:11rem 1fr; gap:clamp(16px,3vw,40px);
+  padding:20px 0; border-bottom:1px solid var(--rule); align-items:baseline;
+}
+@media(max-width:640px){.stack__row{grid-template-columns:1fr; gap:6px}}
+.stack__k{font-family:var(--display); font-weight:600; font-size:var(--s2)}
+.stack__v{font-family:var(--mono); font-size:.84rem; line-height:2; color:var(--ink-2)}
+
+/* 工程 */
+.phase{display:flex; flex-wrap:wrap; gap:8px; margin-top:20px}
+.phase span{
+  border:1px solid var(--rule); border-radius:999px; padding:5px 14px;
+  font-size:.82rem; color:var(--ink-2); background:var(--surface);
+}
+.phase span.on{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
+
+/* 資格 */
+.cert{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin-top:24px}
+@media(min-width:721px){.cert{grid-template-columns:1fr 1fr}}
+.cert div{background:var(--bg); padding:20px 22px}
+.cert b{display:block; font-family:var(--display); font-weight:600; font-size:var(--s2)}
+.cert span{font-family:var(--mono); font-size:.78rem; color:var(--ink-3)}
+
+/* ボウリング */
+.pin{
+  display:grid; grid-template-columns:auto 1fr; gap:clamp(20px,4vw,44px);
+  align-items:center; border:1px solid var(--rule); background:var(--surface);
+  padding:clamp(24px,4vw,40px);
+}
+@media(max-width:640px){.pin{grid-template-columns:1fr; gap:18px}}
+.pin p{color:var(--ink-2); max-width:52ch}
+.lane{display:block}
+.lane .ball{fill:var(--accent)}
+.lane .pinshape{fill:none; stroke:var(--ink-3); stroke-width:3}
+</style>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="mon" viewBox="0 0 168 116">
+      <g><circle class="coin" cx="26" cy="26" r="22"/><rect class="hole" x="20" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="84" cy="26" r="22"/><rect class="hole" x="78" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="142" cy="26" r="22"/><rect class="hole" x="136" y="20" width="12" height="12"/></g>
+      <g><circle class="coin" cx="26" cy="90" r="22"/><rect class="hole" x="20" y="84" width="12" height="12"/></g>
+      <g><circle class="coin" cx="84" cy="90" r="22"/><rect class="hole" x="78" y="84" width="12" height="12"/></g>
+      <g><circle class="coin" cx="142" cy="90" r="22"/><rect class="hole" x="136" y="84" width="12" height="12"/></g>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="index.html">
+      <svg class="mon" width="30" height="21" aria-hidden="true"><use href="#mon"/></svg>
+      <span class="brand__name">Sanada Tech Lab</span>
+    </a>
+    <nav>
+      <a href="index.html#work">事業内容</a>
+      <a href="index.html#made">制作物</a>
+      <a href="index.html#order">ご依頼</a>
+      <a href="contact.html">お問い合わせ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <div class="hero__grid">
+      <svg class="mon mon--hero" width="132" height="91" role="img" aria-label="六文銭">
+        <use href="#mon"/>
+      </svg>
+      <div>
+        <h1><span class="en">Career</span>1990年から、<br>業務システムを作ってきました。</h1>
+        <p class="hero__lead measure">
+          工場の制御プログラムから始めて、ショッピングサイト、通信、カーナビ、
+          流通、医療、金融関係の30件を超える案件で、
+          要件定義から運用保守まで一通り担当してきました。
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 使ってきたもの ===== -->
+  <section id="stack"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">Stack</p>
+      <h2>使ってきたもの。</h2>
+    </div>
+    <p class="measure" style="color:var(--ink-2)">
+      長く使ったものだけを挙げています。名前を知っているだけのものは書きません。
+      ご依頼のときに読んでいただく必要はありません。
+    </p>
+    <div class="stack" style="margin-top:28px">
+      <div class="stack__row">
+        <div class="stack__k">言語</div>
+        <div class="stack__v">C　C++　C#　Java　Python　VB.NET　JavaScript　PL/SQL　アセンブラ</div>
+      </div>
+      <div class="stack__row">
+        <div class="stack__k">フレームワーク</div>
+        <div class="stack__v">.NET / WPF　.NET MAUI　Spring Framework　Struts　Seasar2　Vue.js　Thymeleaf　Servlet / JSP</div>
+      </div>
+      <div class="stack__row">
+        <div class="stack__k">データベース</div>
+        <div class="stack__v">Oracle　PostgreSQL　MySQL　SQL Server ほか一通り</div>
+      </div>
+      <div class="stack__row">
+        <div class="stack__k">OS・基盤</div>
+        <div class="stack__v">Windows　Linux　Android　AWS</div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ===== 工程 ===== -->
+  <section id="phase"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">Scope</p>
+      <h2>担当してきた工程。</h2>
+    </div>
+    <p class="measure" style="color:var(--ink-2)">
+      色の付いているものが、繰り返し担当してきた工程です。
+      小さな案件なら、この全部を一人で通します。
+      途中で人が変わらないので、話が振り出しに戻りません。
+    </p>
+    <div class="phase">
+      <span class="on">要件定義</span>
+      <span class="on">基本設計</span>
+      <span class="on">詳細設計</span>
+      <span class="on">実装</span>
+      <span class="on">単体テスト</span>
+      <span class="on">結合テスト</span>
+      <span class="on">総合テスト</span>
+      <span class="on">運用・保守</span>
+      <span>品質管理</span>
+      <span>工程管理</span>
+    </div>
+  </div></section>
+
+  <!-- ===== 資格 ===== -->
+  <section id="cert"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">Certification</p>
+      <h2>資格。</h2>
+    </div>
+    <div class="cert">
+      <div>
+        <b>情報処理技術者</b>
+        <span>1989年10月</span>
+      </div>
+      <div>
+        <b>AWS 認定 クラウドプラクティショナー</b>
+        <span>2025年5月</span>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ===== ボウリング ===== -->
+  <section id="off"><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">Off hours</p>
+      <h2>仕事のほかは。</h2>
+    </div>
+    <div class="pin">
+      <svg class="lane" width="96" height="96" viewBox="0 0 96 96" role="img" aria-label="ボウリング">
+        <path class="pinshape" d="M40 14c0-6 16-6 16 0 0 7-5 10-5 17 0 11 8 14 8 27 0 15-8 24-11 24s-11-9-11-24c0-13 8-16 8-27 0-7-5-10-5-17Z"/>
+        <circle class="ball" cx="76" cy="74" r="17"/>
+        <circle cx="71" cy="68" r="2.6" fill="var(--bg)"/>
+        <circle cx="79" cy="67" r="2.6" fill="var(--bg)"/>
+        <circle cx="75" cy="75" r="2.6" fill="var(--bg)"/>
+      </svg>
+      <div>
+        <p>
+          ボウリングです。月に4回ほど、健康ボウリングに通っています。
+          同じ動作を繰り返して、少しずつ再現性を上げていく競技なので、
+          性に合っているのだと思います。
+        </p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- ===== 導線 ===== -->
+  <section><div class="wrap sec">
+    <div class="sec__head">
+      <p class="eyebrow">Contact</p>
+      <h2>ご相談はこちらから。</h2>
+    </div>
+    <p class="measure" style="color:var(--ink-2)">
+      お見積もりまで無料です。作れないものは、その場でそう申し上げます。
+    </p>
+    <div class="hero__cta" style="margin-top:24px">
+      <a class="btn" href="index.html#order">お見積もりの流れを見る</a>
+      <a class="btn btn--ghost" href="contact.html">お問い合わせ</a>
+    </div>
+  </div></section>
+
+</main>
+
+<footer><div class="wrap foot">
+  <svg class="mon" width="26" height="18" aria-hidden="true"><use href="#mon"/></svg>
+  <span>Sanada Tech Lab</span>
+  <span style="margin-left:auto">屋号は真田の家紋「六文銭」に由来します。</span>
+</div></footer>
