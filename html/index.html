@@ -186,6 +186,15 @@ section{border-top:1px solid var(--rule)}
 
 footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3); font-size:.82rem}
 .foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+
+/* 受付準備中の告知 — 受付開始時に消す */
+.pending{border-left:2px solid var(--accent); padding:2px 0 2px 20px; margin:0 0 32px}
+.pending b{display:block; font-family:var(--display); font-weight:600; color:var(--ink); margin-bottom:4px}
+.pending p{color:var(--ink-2); font-size:.94rem}
+.pending a{color:var(--accent-text); text-underline-offset:4px}
+.form__set{border:0; margin:0; padding:0; min-width:0; display:grid; gap:26px}
+.form__set:disabled{opacity:.5}
+.form__set:disabled .choice label{cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -233,7 +242,7 @@ footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3)
           「なぜそうしたか」を全部お答えできます。
         </p>
         <div class="hero__cta">
-          <a class="btn" href="contact.html">開発のご相談</a>
+          <a class="btn" href="#order">ご依頼について</a><!-- 受付開始時に戻す -->
           <a class="btn btn--ghost" href="#made">作ったものを見る</a>
         </div>
       </div>
@@ -317,6 +326,12 @@ footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3)
       作るものが決まっていない段階のご相談でも構いません。
       お見積もりまでは無料です。
     </p>
+    <!-- 受付開始時に戻す -->
+    <div class="pending">
+      <b>ただいま、ご依頼の受付準備中です。</b>
+      <p>受付の開始はお問い合わせページでお知らせします。
+      それまでの間、アプリについてのご質問などはメールで承ります。</p>
+    </div>
 
     <ol class="flow">
       <li><div><b>ご相談</b><p>作りたいものと、困っていることをお聞かせください。形が決まっていなくても構いません。</p></div></li>
@@ -358,7 +373,7 @@ footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3)
     <div class="contact">
       <a class="btn" href="contact.html">お問い合わせ</a>
       <span style="color:var(--ink-3); font-size:.88rem">
-        お見積もりまで無料です。平日の夜か土日に、数日以内でお返事します。
+        <!-- 受付開始時に戻す -->ご依頼の受付は準備中です。お問い合わせはメールで承ります。
       </span>
     </div>
   </div></section>

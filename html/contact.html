@@ -186,6 +186,15 @@ section{border-top:1px solid var(--rule)}
 
 footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3); font-size:.82rem}
 .foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+
+/* 受付準備中の告知 — 受付開始時に消す */
+.pending{border-left:2px solid var(--accent); padding:2px 0 2px 20px; margin:0 0 32px}
+.pending b{display:block; font-family:var(--display); font-weight:600; color:var(--ink); margin-bottom:4px}
+.pending p{color:var(--ink-2); font-size:.94rem}
+.pending a{color:var(--accent-text); text-underline-offset:4px}
+.form__set{border:0; margin:0; padding:0; min-width:0; display:grid; gap:26px}
+.form__set:disabled{opacity:.5}
+.form__set:disabled .choice label{cursor:not-allowed}
 </style>
 <style>
 /* 連絡手段 — 罫で区切る。カードにしない */
@@ -288,7 +297,8 @@ button.btn{font-family:var(--body); cursor:pointer}
         <p class="hero__lead measure">
           作るものが決まっていなくて構いません。
           「こういうことに困っている」だけで十分です。
-          お見積もりまで無料で、合わなければ断っていただけます。
+          <!-- 受付開始時に戻す -->
+          ただいま、ご依頼の受付準備中です。開始の時期はこのページでお知らせします。
         </p>
       </div>
     </div>
@@ -332,7 +342,17 @@ button.btn{font-family:var(--body); cursor:pointer}
       <h2>ご依頼・お問い合わせ。</h2>
     </div>
 
+    <!-- 受付開始時に戻す -->
+    <div class="pending">
+      <b>フォームは受付の開始とともにご利用いただけます。</b>
+      <p>それまでの間、アプリについてのご質問などは
+      <a href="mailto:info@sanadatechlab.com">info@sanadatechlab.com</a>
+      へお寄せください。ご依頼のご相談は、受付開始後にお願いいたします。</p>
+    </div>
+
     <form class="form" action="__FORM_ACTION__" method="POST">
+    <!-- 受付開始時に戻す -->
+    <fieldset class="form__set" disabled>
 
       <div class="field">
         <span class="lg">ご用件 <span class="req">必須</span></span>
@@ -430,9 +450,11 @@ button.btn{font-family:var(--body); cursor:pointer}
       </div>
 
       <div class="submit">
-        <button class="btn" type="submit">送信する</button>
+        <!-- 受付開始時に戻す -->
+        <button class="btn" type="submit">受付開始後にご利用いただけます</button>
         <span class="hint">送信内容は、ご相談のためだけに使います。</span>
       </div>
+    </fieldset>
     </form>
 
     <div class="after measure">

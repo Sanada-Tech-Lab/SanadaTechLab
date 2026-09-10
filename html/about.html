@@ -180,6 +180,15 @@ section{border-top:1px solid var(--rule)}
 
 footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3); font-size:.82rem}
 .foot{display:flex; flex-wrap:wrap; gap:14px; align-items:center}
+
+/* 受付準備中の告知 — 受付開始時に消す */
+.pending{border-left:2px solid var(--accent); padding:2px 0 2px 20px; margin:0 0 32px}
+.pending b{display:block; font-family:var(--display); font-weight:600; color:var(--ink); margin-bottom:4px}
+.pending p{color:var(--ink-2); font-size:.94rem}
+.pending a{color:var(--accent-text); text-underline-offset:4px}
+.form__set{border:0; margin:0; padding:0; min-width:0; display:grid; gap:26px}
+.form__set:disabled{opacity:.5}
+.form__set:disabled .choice label{cursor:not-allowed}
 </style>
 <style>
 /* 使ってきたもの：見出しと中身の対 */
@@ -371,7 +380,8 @@ footer{border-top:1px solid var(--rule); padding:30px 0 44px; color:var(--ink-3)
       <h2>ご相談はこちらから。</h2>
     </div>
     <p class="measure" style="color:var(--ink-2)">
-      お見積もりまで無料です。作れないものは、その場でそう申し上げます。
+      <!-- 受付開始時に戻す -->
+      ご依頼の受付は準備中です。開始の時期はお問い合わせページでお知らせします。
     </p>
     <div class="hero__cta" style="margin-top:24px">
       <a class="btn" href="index.html#order">お見積もりの流れを見る</a>
